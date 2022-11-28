@@ -3,6 +3,27 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+type Client {
+  adress: String!
+  cpf: String!
+  email: String!
+  id: ID!
+  name: String!
+  tel: String!
+}
+
+input CreateClientInput {
+  adress: String!
+  cpf: String!
+  email: String!
+  name: String!
+  tel: String!
+}
+
+type Mutation {
+  createClient(createClientObject: CreateClientInput!): Client!
+}
+
 type Query {
-  hello: String!
+  clients: [Client!]!
 }
